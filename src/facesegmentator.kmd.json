@@ -1,0 +1,173 @@
+{
+  "name": "facesegmentator",
+  "version": "1.0.0-dev",
+  "kurentoVersion": "^5.0.0",
+  "imports": [
+    {
+      "name": "core",
+      "version": "^5.0.0",
+      "mavenVersion": "[5.0.0,6.0.0)",
+      "npmVersion": ">=5.0.0 <6.0.0"
+    },
+    {
+      "name": "elements",
+      "version": "^5.0.0",
+      "mavenVersion": "[5.0.0,6.0.0)",
+      "npmVersion": ">=5.0.0 <6.0.0"
+    },
+    {
+      "name": "filters",
+      "version": "^5.0.0",
+      "mavenVersion": "[5.0.0,6.0.0)",
+      "npmVersion": ">=5.0.0 <6.0.0"
+    }
+  ],
+  "code": {
+    "api": {
+      "js": {
+        "nodeName": "kurento-module-facesegmentator",
+        "npmDescription": "",
+        "npmVersion": "1.0.0"
+      },
+      "java": {
+        "mavenGroupId": "org.kurento.module",
+        "packageName": "org.kurento.module.facesegmentator",
+        "mavenArtifactId": "facesegmentator",
+        "mavenVersion": "1.0.0-SNAPSHOT"
+      }
+    },
+    "implementation": {
+      "lib": "libkmsfacesegmentator",
+      "cppNamespace": "kurento::module::facesegmentator"
+    }
+  },
+  "remoteClasses": [
+    {
+      "name": "FaceSegmentatorFilter",
+      "doc": "Filter that detects the face characteristics and throws events with the main points.",
+      "extends": "OpenCVFilter",
+      "constructor": {
+        "params": [
+          {
+            "name": "mediaPipeline",
+            "doc": "the :rom:cls:`MediaPipeline` to which the filter belongs",
+            "type": "MediaPipeline"
+          }
+        ],
+        "doc": "Create a :rom:cls:`FaceSegmentator`"
+      },
+      "properties": [
+        {
+          "name": "intervalEventTime",
+          "doc": "Time (in milliseconds) between two consecutive events",
+          "type": "int"
+        }
+      ],
+      "events": [
+        "FacePosition",
+        "MouthPosition",
+        "EyesPosition",
+        "NoisePosition"
+      ]
+    }
+  ],
+  "complexTypes": [
+    {
+      "typeFormat": "REGISTER",
+      "properties": [
+        {
+          "name": "x",
+          "doc": "Position in pixels of X coordinate of the point",
+          "type": "int"
+        },
+        {
+          "name": "y",
+          "doc": "Position in pixels of Y coordinate of the point",
+          "type": "int"
+        }
+      ],
+      "name": "Point",
+      "doc": "Point coordinates."
+    }
+  ],
+  "events": [
+    {
+      "properties": [
+        {
+          "name": "leftPoint",
+          "doc": "left coordinate of the region of the face",
+          "type": "Point"
+        },
+        {
+          "name": "topPoint",
+          "doc": "top coordinate of the region of the face",
+          "type": "Point"
+        },
+        {
+          "name": "rightPoint",
+          "doc": "right coordinate of the region of the face",
+          "type": "Point"
+        },
+        {
+          "name": "bottomPoint",
+          "doc": "bottom coordinate of the region of the face",
+          "type": "Point"
+        }
+      ],
+      "extends": "Media",
+      "name": "FacePosition",
+      "doc": "Event generated when a face is detected"
+    },
+    {
+      "properties": [
+        {
+          "name": "leftPoint",
+          "doc": "left coordinate of the region of the mouth",
+          "type": "Point"
+        },
+        {
+          "name": "centralPoint",
+          "doc": "central coordinate of the region of the mouth",
+          "type": "Point"
+        },
+        {
+          "name": "rightPoint",
+          "doc": "right coordinate of the region of the mouth",
+          "type": "Point"
+        }
+      ],
+      "extends": "Media",
+      "name": "MouthPosition",
+      "doc": "Event generated when a face is detected"
+    },
+    {
+      "properties": [
+        {
+          "name": "leftEye",
+          "doc": "central coordinate of the left eye",
+          "type": "Point"
+        },
+        {
+          "name": "rightEye",
+          "doc": "central coordinate of the left eye",
+          "type": "Point"
+        }
+      ],
+      "extends": "Media",
+      "name": "EyesPosition",
+      "doc": "Event generated when a face is detected"
+    },
+    {
+      "properties": [
+        {
+          "name": "centralPoint",
+          "doc": "central coordinate of the noise",
+          "type": "Point"
+        }
+      ],
+      "extends": "Media",
+      "name": "NoisePosition",
+      "doc": "Event generated when a face is detected"
+    }
+  ]
+}

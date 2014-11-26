@@ -1,0 +1,13 @@
+{
+  "name": "kurento-module-facesegmentator",
+  "description": "",
+  "main": "dist/kurento-module-facesegmentator.js",
+  "ignore": [
+    "doc/",
+    "lib/",
+    "package.json"
+  ],
+  "keywords": [
+    "Kurento"
+  ]
+}

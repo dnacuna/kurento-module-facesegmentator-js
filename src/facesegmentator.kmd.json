@@ -1,6 +1,6 @@
 {
   "name": "facesegmentator",
-  "version": "6.1.1",
+  "version": "6.1.2-dev",
   "kurentoVersion": "^6.1.0",
   "imports": [
     {
@@ -27,13 +27,13 @@
       "js": {
         "nodeName": "kurento-module-facesegmentator",
         "npmDescription": "",
-        "npmVersion": "6.1.1"
+        "npmVersion": "6.1.2"
       },
       "java": {
         "mavenGroupId": "org.kurento.module",
         "packageName": "org.kurento.module.facesegmentator",
         "mavenArtifactId": "facesegmentator",
-        "mavenVersion": "6.1.1"
+        "mavenVersion": "6.1.2-SNAPSHOT"
       }
     },
     "implementation": {

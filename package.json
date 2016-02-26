@@ -1,6 +1,6 @@
 {
   "name": "kurento-module-facesegmentator",
-  "version": "6.4.1-dev",
+  "version": "6.4.0",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
